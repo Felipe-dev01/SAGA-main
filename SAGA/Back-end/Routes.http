@@ -1,0 +1,29 @@
+POST http://localhost:8081/cad
+Content-Type: application/json
+
+{
+  "nome": "Felipe Farias", 
+  "email": "felipe@aluno.com", 
+  "senha": "12345678", 
+  "dt_nasc": "2008-03-19T00:00:00.000Z", 
+  "telefone": "19983229728", 
+  "cpf": "12345678902", 
+  "ft_perfil": "sem foto", 
+  "tipo": 1
+}
+
+
+###
+POST http://localhost:8081/login
+Content-Type: application/json
+
+{
+    "email": "farias_felipe@outlook.com.br",
+    "senha": "12345678"
+}
+
+###
+POST http://localhost:8081/info
+Content-Type: application/json
+
+
