@@ -2,28 +2,28 @@ POST http://localhost:8081/cad
 Content-Type: application/json
 
 {
-  "nome": "Felipe Farias", 
-  "email": "felipe@aluno.com", 
+  "nome": "Hugo Rocha", 
+  "email": "hugo@prof.com", 
   "senha": "12345678", 
-  "dt_nasc": "2008-03-19T00:00:00.000Z", 
-  "telefone": "19983229728", 
-  "cpf": "12345678902", 
+  "dt_nasc": "2006-05-01T00:00:00.000Z", 
+  "telefone": "19998952055", 
+  "cpf": "12345678904", 
   "ft_perfil": "sem foto", 
-  "tipo": 1
+  "tipo": 2
 }
-
 
 ###
 POST http://localhost:8081/login
 Content-Type: application/json
 
 {
-    "email": "farias_felipe@outlook.com.br",
+    "email": "hugo@aluno.com",
     "senha": "12345678"
 }
 
 ###
-POST http://localhost:8081/info
+POST http://localhost:8081/info/6
+Authorization: Bearer 
 Content-Type: application/json
 
 

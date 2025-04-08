@@ -1,18 +1,54 @@
-import { request, response, next } from "express";
+// import jwt from 'jsonwebtoken'
+// import { JWT_SECRET } from "../../server.js"
+
+// export const tokenAuthenticate = (req, res, next ) => {
+
+//     const authHeader = req.headers?.authorization;
+
+//     if (!authHeader) {
+//       return res.status(401).json({ error: "Token de autenticação não fornecido" });
+//     }
+  
+//     const token = authHeader.split(" ")[1];
+
+
+//     if(!responseToken){ return res.json({error: "Token inválido "}) }
+
+//     jwt.verify(responseToken, JWT_SECRET, (error, decoded)=>{
+        
+//         if(error){ 
+//             return res.status(401).json({error: "token invalido ou expirado"}) 
+//         }
+
+//         req.userId = decoded.userId
+
+//         next()
+//     })
+// }
+
+
 import jwt from 'jsonwebtoken'
 import { JWT_SECRET } from "../../server.js"
 
-export const tokenAuthenticate = (req, res, next ) => {
-    const responseToken = req.header('Authorization')?.split(" ")[1]
+export const tokenAuthenticate = (req, res, next) => {
+  const authHeader = req.headers?.authorization;
 
-    if(!responseToken){ return res.json({error: "Token inválido "}) }
+  if (!authHeader) {
+    return res.status(401).json({ error: "Token de autenticação não fornecido" });
+  }
 
-    jwt.verify(responseToken, JWT_SECRET, (error, decoded)=>{
-        
-        if(error){ return res.json({error}) }
+  const token = authHeader.split(" ")[1];
 
-        req.userId = decoded.userId
+  if (!token) {
+    return res.status(401).json({ error: "Token inválido" });
+  }
 
-        next()
-    })
-}
+  jwt.verify(token, JWT_SECRET, (error, decoded) => {
+    if (error) {
+      return res.status(401).json({ error: "Token inválido ou expirado" });
+    }
+
+    req.userId = decoded.userId;
+    next();
+  });
+};

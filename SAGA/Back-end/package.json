@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch server.js",
-    "start": "node server.js"
+    "dev": "node --watch server.js"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +19,6 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
-    "prisma": "^6.5.0",
     "sqlite3": "^5.1.7"
   },
   "repository": {
@@ -30,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/HugoSants/AuthenticateNode/issues"
   },
-  "homepage": "https://github.com/HugoSants/AuthenticateNode#readme"
+  "homepage": "https://github.com/HugoSants/AuthenticateNode#readme",
+  "devDependencies": {
+    "prisma": "^6.6.0"
+  }
 }

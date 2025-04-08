@@ -4,7 +4,7 @@ import { router } from './routes.js'
 import cors from 'cors'
 import { PrismaClient } from '@prisma/client'
 
-export const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 dotenv.config()
 
