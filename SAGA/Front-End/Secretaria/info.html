@@ -4,99 +4,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAGA - Curso</title>
-    <link rel="stylesheet" href="../Css Base/base.css">
-    <link rel="stylesheet" href="css/info.css">
+    <title>SAGA - Informações</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+        .navbar {
+            background-color: #2c3e50;
+        }
+        .nav-link {
+            color: white !important;
+        }
+        .nav-link:hover {
+            color: #3498db !important;
+        }
+    </style>
 </head>
 
-<body>
-    <header class="navbar">
-        <img src="../Img/logo.svg" alt="SAGA Logo">
-        <nav class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Frequência</a>
-            <a href="#">Boletim</a>
-            <a href="#">Curso</a>
-        </nav>
-        <div class="profile-icon"></div>
-    </header>
-
-    <main class="container">
-        <div class="content-box">
-            <h1>Informações Pessoais</h1>
-
-            <div class="profile-content">
-                <!-- Foto de Perfil -->
-                <div class="profile-photo">
-                    <div class="photo-placeholder"></div>
-                    <p>Foto de perfil</p>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark px-4 mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../Img/logo.svg" alt="SAGA Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Frequência</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Boletim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Curso</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-outline-light">
+                        <i class="bi bi-person-circle"></i>
+                    </button>
                 </div>
+            </div>
+        </div>
+    </nav>
 
-                <!-- Campos de Informações -->
-                <div class="info-fields">
-                    <div class="form-grid">
-                        <div class="input-group full-width">
-                            <label for="nome">Nome:</label>
-                            <input type="text" id="nome" value="José Silva Souza" disabled>
+    <main class="container py-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">Informações Pessoais</h2>
+
+                <div class="row">
+                    <div class="col-md-3 text-center mb-4">
+                        <div class="profile-photo mb-2">
+                            <i class="bi bi-camera fs-1"></i>
                         </div>
+                        <p class="text-muted">Foto de perfil</p>
+                    </div>
 
-                        <div class="input-group half-width">
-                            <label for="nascimento">Data de Nascimento:</label>
-                            <input type="text" id="nascimento" value="01/01/2000" disabled>
-                        </div>
+                    <div class="col-md-9">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="nome" placeholder="Nome" value="José Silva Souza" disabled>
+                                        <label for="nome">Nome</label>
+                                    </div>
+                                </div>
 
-                        <div class="input-group small-width">
-                            <label for="matricula">Nº Matrícula:</label>
-                            <input type="text" id="matricula" value="XXXXX" disabled>
-                        </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="nascimento" placeholder="Data de Nascimento" value="01/01/2000" disabled>
+                                        <label for="nascimento">Data de Nascimento</label>
+                                    </div>
+                                </div>
 
-                        <div class="input-group full-width">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" value="jose.silva.souza@email.example.co.br" disabled>
-                        </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="matricula" placeholder="Nº Matrícula" value="XXXXX" disabled>
+                                        <label for="matricula">Nº Matrícula</label>
+                                    </div>
+                                </div>
 
-                        <div class="input-group half-width">
-                            <label for="telefone">Nº de Telefone:</label>
-                            <input type="text" id="telefone" value="(19) 99999 - 9999" disabled>
-                        </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Email" value="jose.silva.souza@email.example.co.br" disabled>
+                                        <label for="email">Email</label>
+                                    </div>
+                                </div>
 
-                        <div class="input-group half-width">
-                            <label for="rua">Rua:</label>
-                            <input type="text" id="rua" value="Rua xxxx xxxxxx xxx" disabled>
-                        </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="telefone" placeholder="Telefone" value="(19) 99999 - 9999" disabled>
+                                        <label for="telefone">Nº de Telefone</label>
+                                    </div>
+                                </div>
 
-                        <div class="input-group half-width">
-                            <label for="bairro">Bairro:</label>
-                            <input type="text" id="bairro" value="xxxxx xxxxx" disabled>
-                        </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="rua" placeholder="Rua" value="Rua xxxx xxxxxx xxx" disabled>
+                                        <label for="rua">Rua</label>
+                                    </div>
+                                </div>
 
-                        <div class="input-group small-width">
-                            <label for="residencia">Nº Residência:</label>
-                            <input type="text" id="residencia" value="XXXX" disabled>
-                        </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="bairro" placeholder="Bairro" value="xxxxx xxxxx" disabled>
+                                        <label for="bairro">Bairro</label>
+                                    </div>
+                                </div>
 
-                        <div class="input-group small-width">
-                            <label for="cep">CEP:</label>
-                            <input type="text" id="cep" value="xxxx-xxx" disabled>
-                        </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="residencia" placeholder="Nº Residência" value="XXXX" disabled>
+                                        <label for="residencia">Nº Residência</label>
+                                    </div>
+                                </div>
 
-                        <div class="input-group medium-width">
-                            <label for="cidade">Cidade:</label>
-                            <input type="text" id="cidade" value="Hortolândia - SP" disabled>  
-                        </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="cep" placeholder="CEP" value="xxxx-xxx" disabled>
+                                        <label for="cep">CEP</label>
+                                    </div>
+                                </div>
 
-                        <!-- Botão -->
-                        <button>Editar Dados</button>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="cidade" placeholder="Cidade" value="Hortolândia - SP" disabled>
+                                        <label for="cidade">Cidade</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 text-center mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5" id="editarBtn">Editar Dados</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
     </main>
 
-    <footer>
+    <footer class="bg-dark text-light text-center py-3 mt-5">
         Copyright &copy; 2024 - All Rights Reserved - SAGA
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/info.js"></script>
 </body>
 

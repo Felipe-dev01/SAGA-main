@@ -21,3 +21,40 @@ model User {
 
   @@map("user")
 }
+
+model Curso {
+  id_curso  String  @id @default(uuid())
+  nome      String
+  codigo    Int     @unique @default(autoincrement())
+  periodo   String
+  descricao String
+  ch_total  String
+  freq_min  String
+  turmas    Turma[]
+  materias  Materia[]
+  @@map("curso")
+}
+
+model Materia {
+  id_materia String @id @default(uuid())
+  nome       String
+  codigo     Int     @unique @default(autoincrement())
+  descricao  String
+  ch_total   String
+  freq_min   String
+  id_curso   String
+  curso      Curso    @relation(fields: [id_curso], references: [id_curso])
+
+  @@map("materia")
+}
+
+model Turma {
+  id_turma  String   @id @default(uuid())
+  nome      String
+  dt_inicio DateTime
+  semestres String
+  id_curso  String
+  curso     Curso    @relation(fields: [id_curso], references: [id_curso])
+
+  @@map("turma")
+}

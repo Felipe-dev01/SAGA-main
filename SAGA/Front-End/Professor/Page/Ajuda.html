@@ -4,39 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAGA - Curso</title>
-    <link rel="stylesheet" href="../Css/base.css">
-
+    <title>SAGA - Ajuda</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url('../Img/bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: #2c3e50;
+        }
+        .nav-link {
+            color: white !important;
+        }
+        .nav-link:hover {
+            color: #3498db !important;
+        }
+        .content-box {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .help-icon {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
-    <header class="navbar">
-        <img src="../Img/logo.svg" alt="SAGA Logo">
-        <nav class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Frequência</a>
-            <a href="#">Boletim</a>
-            <a href="#">Curso</a>
-        </nav>
-        <div class="profile-icon"></div>
-    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark px-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../Img/logo.svg" alt="SAGA Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Frequência</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Boletim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Curso</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-outline-light">
+                        <i class="bi bi-person-circle"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <main class="container">
-        <div class="content-box">
-                    <h1>Ajuda</h1>
-                    <br>
-                    <p>Envie sua dúvida ou contribuição</p>
-                    <br><br>
-                    <img src="../Img/Ajuda.svg" alt="Ícone de ajuda">
-                    <br><br><br>
-                    <p>Fone: (19) 99999-9999</p>
-                    <p>Email: desenvolvimento.saga@gmail.com</p>
+    <main class="container py-4">
+        <div class="content-box text-center">
+            <h1 class="mb-4">Ajuda</h1>
+            <p class="lead mb-4">Envie sua dúvida ou contribuição</p>
+            <img src="../Img/Ajuda.svg" alt="Ícone de ajuda" class="help-icon">
+            <div class="mt-4">
+                <p><i class="bi bi-telephone-fill me-2"></i>Fone: (19) 99999-9999</p>
+                <p><i class="bi bi-envelope-fill me-2"></i>Email: desenvolvimento.saga@gmail.com</p>
+            </div>
         </div>
     </main>
 
-    <footer>
+    <footer class="bg-dark text-light text-center py-3 mt-5">
         Copyright &copy; 2024 - All Rights Reserved - SAGA
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../Js/curso.js"></script>
 </body>
 
